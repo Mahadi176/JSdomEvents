@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main section h1{
+            font-weight: 700;
+            text-decoration: underline;
+            color: brown;
+        }
+        body{
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>DOM Events Session</h1>
+
+            <button onclick="makeYellow()">Click ME </button>
+            <button onclick="makePink()">Click Me</button>
+            <button id="make-purple">Purple Me</button>
+
+        </section>
+    </main>
+    <script>
+        function makeYellow(){
+            document.body.style.backgroundColor = 'yellow'
+        }
+        function makePink(){
+            document.body.style.backgroundColor ='pink'
+        }
+
+        const btnMakePurple  = document.getElementById('make-purple')
+
+        btnMakePurple.onclick = makePurple 
+
+        function makePurple(){
+            document.body.style.backgroundColor = 'purple'
+        }
+
+    </script>
+</body>
+</html>
