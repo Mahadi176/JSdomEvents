@@ -8,11 +8,27 @@
         main section h1{
             font-weight: 700;
             text-decoration: underline;
-            color: brown;
+            color: silver;
         }
         body{
             margin: 0 auto;
             text-align: center;
+        }
+        .first-section{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn-primary{
+            width: 100px;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: blanchedalmond;
+            color: chocolate;
+            font-weight: 600;
+            margin: 10px;
+            
         }
     </style>
 </head>
@@ -20,11 +36,13 @@
     <main>
         <section>
             <h1>DOM Events Session</h1>
-
-            <button onclick="makeYellow()">Click ME </button>
-            <button onclick="makePink()">Click Me</button>
-            <button id="make-purple">Purple Me</button>
-
+            <div class="first-section">
+            <button class="btn-primary" onclick="makeYellow()">Click ME </button>
+            <button class="btn-primary" onclick="makePink()">Click Me</button>
+            <button class="btn-primary" id="make-purple">Purple Me</button>
+            <button class="btn-primary" id="make-green">Make Green</button>
+            <button class="btn-primary" id="make-blue">Make Blue</button>
+            </div>
         </section>
     </main>
     <script>
@@ -43,6 +61,20 @@
             document.body.style.backgroundColor = 'purple'
         }
 
+        const btnMakeGreen = document.getElementById('make-green')
+         
+        btnMakeGreen.onclick = makeGreen
+
+        function makeGreen(){
+            document.body.style.backgroundColor = 'green'
+        }
+
+        // Using Event Listener 
+
+        document.getElementById('make-blue').addEventListener('click', function makeBlue(){
+                    document.body.style.backgroundColor = 'blueviolet';
+                    })
     </script>
+    <script src="index.js"></script>
 </body>
 </html>
