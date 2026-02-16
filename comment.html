@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box</title>
+    <style>
+        body{
+            background-color: bisque;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1{
+            text-decoration: underline;
+            font-weight: 900;
+            color: brown;
+        }
+        h3{
+            color: saddlebrown;
+        }
+        .comment-box{
+            width: 500px;
+            background-color: beige;
+            color: brown;
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        #comment-section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        #btn-primary{
+             width: 100px;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: maroon;
+            color: white;
+            font-weight: 600;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>This is a Public Comment Section</h1>
+
+        <h3> The Comments are Here :</h3>
+
+        <div id="comment-section">
+            <p class="comment-box" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eius, veniam exercitationem vero perferendis doloremque quo iure inventore modi, aliquid voluptatibus nostrum, dolorem vel velit repellat reiciendis hic. Expedita, doloremque!</p>
+            <p class="comment-box" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eius, veniam exercitationem vero perferendis doloremque quo iure inventore modi, aliquid voluptatibus nostrum, dolorem vel velit repellat reiciendis hic. Expedita, doloremque!</p>
+            <p class="comment-box" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eius, veniam exercitationem vero perferendis doloremque quo iure inventore modi, aliquid voluptatibus nostrum, dolorem vel velit repellat reiciendis hic. Expedita, doloremque!</p>
+            <p class="comment-box" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora eius, veniam exercitationem vero perferendis doloremque quo iure inventore modi, aliquid voluptatibus nostrum, dolorem vel velit repellat reiciendis hic. Expedita, doloremque!</p>
+        </div>
+
+        <textarea name="" id="text-section" cols="50" rows="8"></textarea>
+        <br>
+        <button id="btn-primary">Comment</button>
+    </section>
+    <script>
+
+     document.getElementById('btn-primary')
+    .addEventListener('click' , function(){
+     const getComment = document.getElementById('text-section');
+     const commentValue = getComment.value;
+     const commentBox = document.getElementById('comment-section');
+     const newComment = document.createElement('p')
+     newComment.classList.add('comment-box')
+     newComment.innerText = commentValue;
+     commentBox.appendChild(newComment);
+     getComment.value = '';
+   })
+
+    </script>
+</body>
+</html>
